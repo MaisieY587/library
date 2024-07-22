@@ -1,0 +1,8 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.book {
+    background-color:rgb(156, 154, 184);
+}

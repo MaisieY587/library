@@ -10,6 +10,8 @@ function Book(title, author, pages) {
 let sample1 = new Book('Pride and Prejudice', 'Jane Austen', '480')
 let sample2 = new Book('Normal People', 'Sally Rooney', '266')
 
+let submitButton = document.querySelector('.submit');
+
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
@@ -41,8 +43,16 @@ function submitBook() {
   let title = document.getElementById('title').value;
   let author = document.getElementById('author').value;
   let pages = document.getElementById('pages').value;
+
   let newBook = new Book(title, author, pages);
 
   addBookToLibrary(newBook);
   displayBook(newBook);
+
+    // Clear input fields after submission
+    document.getElementById('title').value = '';
+    document.getElementById('author').value = '';
+    document.getElementById('pages').value = '';
 }
+
+submitButton.addEventListener('click', submitBook);
