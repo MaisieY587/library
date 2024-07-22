@@ -8,18 +8,24 @@
 </head>
 <body>
 
-    <div class="inputBook">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title">
+    <button class="newBook">NEW BOOK</button>
 
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author">
+    <dialog class="inputBook">
+        <form>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+    
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author">
+    
+            <label for="pages">Pages:</label>
+            <input type="text" id="pages" name="pages">
+    
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="confirmBtn" value="default">Confirm</button>
 
-        <label for="pages">Pages:</label>
-        <input type="text" id="pages" name="pages">
-
-        <button class="submit">Submit</button>
-    </div>
+        </form>
+    </dialog>
 
     <div class="shelf">
         

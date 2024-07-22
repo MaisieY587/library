@@ -10,8 +10,6 @@ function Book(title, author, pages) {
 let sample1 = new Book('Pride and Prejudice', 'Jane Austen', '480')
 let sample2 = new Book('Normal People', 'Sally Rooney', '266')
 
-let submitButton = document.querySelector('.submit');
-
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
@@ -39,6 +37,24 @@ addBookToLibrary(sample1);
 addBookToLibrary(sample2);
 myLibrary.forEach(book => displayBook(book));
 
+
+const newBookButton = document.querySelector('.newBook');
+const inputBookDialog = document.querySelector('.inputBook');
+const confirmButton = inputBookDialog.querySelector('#confirmBtn');
+
+newBookButton.addEventListener('click', () => {
+  inputBookDialog.showModal();
+});
+
+// Cancel
+inputBookDialog.addEventListener('close', (e) => {
+  outputBox.value =
+    favDialog.returnValue === "default"
+      ? "No return value."
+      : `ReturnValue: ${favDialog.returnValue}.`; // Have to check for "default" rather than empty string
+})
+
+
 function submitBook() {
   let title = document.getElementById('title').value;
   let author = document.getElementById('author').value;
@@ -55,4 +71,8 @@ function submitBook() {
     document.getElementById('pages').value = '';
 }
 
-submitButton.addEventListener('click', submitBook);
+confirmButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  submitBook();
+  inputBookDialog.close(selectEl.value);
+})

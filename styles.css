@@ -3,6 +3,20 @@ body {
     flex-direction: column;
 }
 
+.shelf {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inputBook {
+    margin-bottom: 20px;
+}
+
 .book {
     background-color:rgb(156, 154, 184);
+    width: 150px;
+    height: 200px;
+    padding: 10px;
+    flex-wrap: wrap;
+    border-radius: 5px;
 }
