@@ -10,6 +10,8 @@ function Book(title, author, pages) {
 let sample1 = new Book('Pride and Prejudice', 'Jane Austen', '480')
 let sample2 = new Book('Normal People', 'Sally Rooney', '266')
 
+displayLibrary();
+
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
@@ -42,6 +44,7 @@ function displayBook(book, index) {
 
 addBookToLibrary(sample1);
 addBookToLibrary(sample2);
+displayLibrary();
 
 
 function displayLibrary() {
