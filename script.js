@@ -14,7 +14,7 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
-function displayBook(book) {
+function displayBook(book, index) {
   const bookDiv = document.createElement('div');
   bookDiv.classList.add('book');
 
@@ -30,30 +30,44 @@ function displayBook(book) {
   pagesElement.textContent = `Pages: ${book.pages}`;
   bookDiv.appendChild(pagesElement);
 
+  const removeButton = document.createElement('button');
+  removeButton.textContent = 'Remove';
+  removeButton.addEventListener('click', () => {
+    removeBook(index);
+  });
+  bookDiv.appendChild(removeButton);
+
   shelf.appendChild(bookDiv);
 }
 
 addBookToLibrary(sample1);
 addBookToLibrary(sample2);
-myLibrary.forEach(book => displayBook(book));
+
+
+function displayLibrary() {
+  shelf.innerHTML = '';
+  myLibrary.forEach((book, index) => displayBook(book, index));
+}
 
 
 const newBookButton = document.querySelector('.newBook');
 const inputBookDialog = document.querySelector('.inputBook');
 const confirmButton = inputBookDialog.querySelector('#confirmBtn');
+const cancelButton = document.getElementById('cancelButton');
 
 newBookButton.addEventListener('click', () => {
   inputBookDialog.showModal();
 });
 
 // Cancel
-inputBookDialog.addEventListener('close', (e) => {
-  outputBox.value =
-    favDialog.returnValue === "default"
-      ? "No return value."
-      : `ReturnValue: ${favDialog.returnValue}.`; // Have to check for "default" rather than empty string
-})
+cancelButton.addEventListener('click', () => {
+  inputBookDialog.close();
+});
 
+function removeBook(index) {
+  myLibrary.splice(index);
+  displayLibrary();
+}
 
 function submitBook() {
   let title = document.getElementById('title').value;
@@ -74,5 +88,5 @@ function submitBook() {
 confirmButton.addEventListener('click', (event) => {
   event.preventDefault();
   submitBook();
-  inputBookDialog.close(selectEl.value);
+  inputBookDialog.close();
 })
