@@ -1,11 +1,37 @@
 body {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.heading {
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: rgb(170, 175, 177);
+    margin-bottom: 50px;
+}
+
+.newBook {
+    width: 150px;
+    height: 50px;
+    margin-left: auto;
+    border-radius: 5px;
+    background-color: aliceblue;
 }
 
 .shelf {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .inputBook {
@@ -19,4 +45,6 @@ body {
     padding: 10px;
     flex-wrap: wrap;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
+
