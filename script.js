@@ -34,6 +34,7 @@ function displayBook(book, index) {
   bookDiv.appendChild(pagesElement);
 
   const removeButton = document.createElement('button');
+  removeButton.id = 'remove'
   removeButton.textContent = 'Remove';
   removeButton.addEventListener('click', () => {
     removeBook(index);
