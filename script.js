@@ -39,6 +39,24 @@ function displayBook(book, index) {
   });
   bookDiv.appendChild(removeButton);
 
+  const readButton = document.createElement('button');
+  readButton.id = 'readToggle';
+  readButton.className = 'Read';
+  readButton.textContent = 'Read';
+  bookDiv.appendChild(readButton);
+
+  readButton.addEventListener('click', () => {
+    if (readButton.classList.contains('Read')) {
+      readButton.classList.add('NotRead');
+      readButton.classList.remove('Read');
+      readButton.textContent = 'Not Read';
+    }
+    else {
+      readButton.classList.remove('NotRead');
+      readButton.classList.add('Read');
+      readButton.textContent = 'Read';
+    }
+  });
   shelf.appendChild(bookDiv);
 }
 
