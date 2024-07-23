@@ -94,7 +94,7 @@ cancelButton.addEventListener('click', () => {
 });
 
 function removeBook(index) {
-  myLibrary.splice(index);
+  myLibrary.splice(index, 1);
   displayLibrary();
 }
 

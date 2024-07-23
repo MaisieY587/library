@@ -4,6 +4,12 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    background-color:rgb(245, 244, 236);
+}
+
+img {
+    width: 50px;
+    height: 60px;
 }
 
 .heading {
@@ -39,12 +45,15 @@ body {
 }
 
 .book {
-    background-color:rgb(156, 154, 184);
+    background-color:rgb(180, 178, 159);
     width: 150px;
     height: 200px;
     padding: 10px;
     flex-wrap: wrap;
     border-radius: 5px;
     margin-bottom: 20px;
+    border-width: 2px;
+    border-color: rgb(107, 105, 92);;
+    border-style: solid;
 }
 
